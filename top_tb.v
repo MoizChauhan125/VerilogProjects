@@ -18,28 +18,28 @@ module top_tb();
 	end
 
 	always begin
-		#2 clk = ~clk;
+		#20 clk = ~clk;
 	end
 	
 	initial begin
-		#500000 test_push_button = 1'b1;
+		#5000000 test_push_button = 1'b1;
 			test_opcode = 2'b00;
 		
-		#550000 test_push_button = 1'b1;
+		#5500000 test_push_button = 1'b1;
 			test_opcode = 2'b01;
 
-		#600000 test_push_button = 1'b1;
+		#6000000 test_push_button = 1'b1;
 			test_opcode = 2'b10;
 
-		#650000 test_push_button = 1'b1;
+		#6500000 test_push_button = 1'b1;
 			test_opcode = 2'b11;
 
-		#700000 test_push_button = 1'b0;
+		#7000000 test_push_button = 1'b0;
 			test_opcode = 2'b11;
 	end
 	
 	initial begin
-		#4333056 $finish; //the time for the complete picture to load. 40ns time for a single pixel
+		#43330560 $finish; //the time for the complete picture to load. 40ns time for a single pixel
 	end
 
 endmodule
